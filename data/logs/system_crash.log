@@ -1,0 +1,36 @@
+2026-01-04 16:45:00 [kernel] Out of memory: Kill process 12345 (java) score 850 or sacrifice child
+2026-01-04 16:45:01 [kernel] Killed process 12345 (java) total-vm:8388608kB, anon-rss:7340032kB, file-rss:0kB
+2026-01-04 16:45:02 [system] JVM crash detected
+
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f8a2c4f3a20, pid=12345, tid=0x00007f8a1c0ff700
+#
+# JRE version: OpenJDK Runtime Environment (11.0.16+8) (build 11.0.16+8-post-Ubuntu-0ubuntu120.04)
+# Java VM: OpenJDK 64-Bit Server VM (11.0.16+8-post-Ubuntu-0ubuntu120.04, mixed mode)
+# Problematic frame:
+# C  [libc.so.6+0x18fa20]  __memcpy_avx_unaligned+0x20
+#
+
+Stack: [0x00007f8a1c000000,0x00007f8a1c100000],  sp=0x00007f8a1c0fed90,  free space=1019k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libc.so.6+0x18fa20]  __memcpy_avx_unaligned+0x20
+V  [libjvm.so+0x9a3f20]
+V  [libjvm.so+0x9a4123]
+C  [libzip.so+0x2f45]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  java.util.zip.Inflater.inflate([BII)I
+J  com.app.service.DataProcessor.decompress([B)[B
+J  com.app.handler.RequestHandler.process(Lcom/app/Request;)V
+
+2026-01-04 16:45:03 [monitor] Service unhealthy: no response from port 8080
+2026-01-04 16:45:04 [monitor] Attempting automatic restart (attempt 1/3)
+2026-01-04 16:45:10 [init] Process startup failed: address already in use (port 8080)
+2026-01-04 16:45:15 [monitor] Attempting automatic restart (attempt 2/3)
+2026-01-04 16:45:20 [ERROR] Failed to bind to 0.0.0.0:8080: Address already in use
+
+2026-01-04 16:45:25 [disk] WARNING: Disk usage above 95% on /var/log (45GB used, 2GB free)
+2026-01-04 16:45:26 [disk] ERROR: Cannot write to disk: No space left on device
+2026-01-04 16:45:30 [monitor] Maximum restart attempts reached. Service marked as FAILED.

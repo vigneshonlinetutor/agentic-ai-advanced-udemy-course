@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Environment Variables (CRITICAL - Contains API Keys)
+.env
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Testing
+.pytest_cache/
+.mypy_cache/
+
+# Observability Logs
+observability_logs/

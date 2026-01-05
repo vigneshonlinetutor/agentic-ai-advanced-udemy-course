@@ -1,0 +1,60 @@
+Feature: Two-Factor Authentication (2FA)
+
+Background:
+Security requirement for all user accounts to enable optional 2FA for enhanced protection.
+
+User Story:
+As a security-conscious user, I want to enable two-factor authentication so that my account is protected even if my password is compromised.
+
+Functional Requirements:
+
+1. Enable 2FA
+   - Given I'm logged into my account
+   - When I navigate to Security Settings
+   - And I click "Enable 2FA"
+   - Then I should see QR code to scan with authenticator app
+   - And I should see backup codes (10 codes, each 8 digits)
+   - When I enter valid 6-digit OTP from authenticator
+   - Then 2FA should be enabled
+   - And I should receive confirmation email
+
+2. Login with 2FA Enabled
+   - Given my account has 2FA enabled
+   - When I enter correct email and password
+   - Then I should be redirected to OTP verification page
+   - When I enter valid 6-digit OTP within 60 seconds
+   - Then I should be logged in successfully
+
+3. Invalid OTP Handling
+   - Given I'm on OTP verification page
+   - When I enter invalid OTP 3 times
+   - Then my account should be temporarily locked for 10 minutes
+   - And I should receive security alert email
+
+4. Backup Code Usage
+   - Given I don't have access to authenticator app
+   - When I click "Use backup code" on OTP page
+   - And I enter valid backup code
+   - Then I should be logged in successfully
+   - And that backup code should be marked as used (can't reuse)
+
+5. Disable 2FA
+   - Given 2FA is enabled
+   - When I go to Security Settings
+   - And I click "Disable 2FA"
+   - Then I should be prompted to enter current password
+   - And I should enter valid OTP one last time
+   - Then 2FA should be disabled
+   - And I should receive confirmation email
+
+6. Lost Device Recovery
+   - Given I lost my authenticator device
+   - When I click "Lost access to 2FA device?"
+   - Then I should be able to verify identity via email OTP
+   - And I should be able to disable old 2FA and setup new 2FA
+
+Edge Cases:
+- OTP expires after 60 seconds
+- Backup codes expire after 90 days
+- Maximum 5 failed OTP attempts per hour
+- QR code session expires after 10 minutes if not activated
