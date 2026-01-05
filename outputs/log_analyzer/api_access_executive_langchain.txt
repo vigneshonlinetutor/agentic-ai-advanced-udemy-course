@@ -1,1 +1,0 @@
-We experienced several critical issues with our application, including problems processing payments and temporary service outages. This affected users' ability to complete transactions and access important features. Our team is currently investigating the root causes and implementing fixes to ensure stability. We expect to resolve these issues within the next few hours.

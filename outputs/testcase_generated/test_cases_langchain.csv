@@ -1,6 +1,0 @@
-id,title,steps,expected,priority
-TC-001,Valid User Registration,Prepare a valid request body with all required fields | Send a POST request to /api/v1/users/register | Check the response status,Response status should be 201 Created and contain userId and authToken,High
-TC-002,Duplicate Email Registration,Prepare a request body with an email that already exists in the system | Send a POST request to /api/v1/users/register | Check the response status,Response status should be 409 Conflict with error message 'Email already registered',High
-TC-003,Invalid Password Registration,"Prepare a request body with a password that does not meet the criteria (e.g., less than 8 characters) | Send a POST request to /api/v1/users/register | Check the response status",Response status should be 400 Bad Request with specific error details,High
-TC-004,Invalid Mobile Number Registration,Prepare a request body with an invalid mobile number format | Send a POST request to /api/v1/users/register | Check the response status,Response status should be 400 Bad Request with error details about mobile number format,Medium
-TC-005,Rate Limiting Exceeded,Send 6 registration requests from the same IP within an hour | Check the response status of the 6th request,Response status should be 429 Too Many Requests,Medium

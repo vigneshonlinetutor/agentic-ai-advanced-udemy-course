@@ -1,5 +1,5 @@
 {
-  "summary": "Multiple critical errors occurred, primarily internal server errors and service unavailability.",
+  "summary": "Multiple critical errors affecting payment processing and service availability.",
   "error_count": 5,
   "critical_errors": [
     {
@@ -29,18 +29,18 @@
     }
   ],
   "root_causes": [
-    "malfunction in payment processing system",
-    "server overload or misconfiguration"
+    "Malfunction in payment processing system",
+    "Server overload or misconfiguration"
   ],
   "affected_systems": [
     "payment processing",
-    "API service"
+    "dashboard",
+    "reports"
   ],
   "recommendations": [
-    "investigate payment processing system",
-    "review server configurations",
-    "implement better error handling",
-    "consider scaling infrastructure"
+    "Investigate payment processing issues",
+    "Monitor server performance",
+    "Implement rate limiting for authentication"
   ],
   "severity": "high"
 }

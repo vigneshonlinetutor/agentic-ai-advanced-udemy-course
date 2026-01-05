@@ -3,54 +3,54 @@
     "id": "TC-001",
     "title": "Valid User Registration",
     "steps": [
-      "Prepare a valid request body with all required fields",
-      "Send a POST request to /api/v1/users/register",
-      "Check the response status and body"
+      "Send POST request to /api/v1/users/register with valid data",
+      "Check response status",
+      "Check response body for userId and authToken"
     ],
-    "expected": "Response status should be 201 Created, and response should contain userId and authToken",
+    "expected": "Response status is 201 Created and contains userId and authToken",
     "priority": "High"
   },
   {
     "id": "TC-002",
     "title": "Duplicate Email Registration",
     "steps": [
-      "Register a user with a unique email",
-      "Attempt to register another user with the same email",
-      "Check the response status and body"
+      "Send POST request to /api/v1/users/register with an email that already exists",
+      "Check response status",
+      "Check response body for error message"
     ],
-    "expected": "Response status should be 409 Conflict, and error message should be 'Email already registered'",
+    "expected": "Response status is 409 Conflict and error message is 'Email already registered'",
     "priority": "High"
   },
   {
     "id": "TC-003",
     "title": "Invalid Password Registration",
     "steps": [
-      "Prepare a request body with a password that does not meet the criteria (e.g., less than 8 characters)",
-      "Send a POST request to /api/v1/users/register",
-      "Check the response status and body"
+      "Send POST request to /api/v1/users/register with a password that does not meet criteria",
+      "Check response status",
+      "Check response body for validation error details"
     ],
-    "expected": "Response status should be 400 Bad Request with specific error details about password validation",
+    "expected": "Response status is 400 Bad Request with specific error details",
     "priority": "High"
   },
   {
     "id": "TC-004",
     "title": "Invalid Mobile Number Registration",
     "steps": [
-      "Prepare a request body with an invalid mobile number format",
-      "Send a POST request to /api/v1/users/register",
-      "Check the response status and body"
+      "Send POST request to /api/v1/users/register with an invalid mobile number format",
+      "Check response status",
+      "Check response body for validation error"
     ],
-    "expected": "Response status should be 400 Bad Request with error details about mobile number validation",
-    "priority": "High"
+    "expected": "Response status is 400 Bad Request with 'Mobile number format is invalid'",
+    "priority": "Medium"
   },
   {
     "id": "TC-005",
     "title": "Rate Limiting Exceeded",
     "steps": [
-      "Simulate 6 registration attempts from the same IP within an hour",
-      "Check the response status of the 6th attempt"
+      "Send 6 POST requests to /api/v1/users/register from the same IP within an hour",
+      "Check response status for the 6th request"
     ],
-    "expected": "Response status should be 429 Too Many Requests",
+    "expected": "Response status is 429 Too Many Requests",
     "priority": "Medium"
   }
 ]
