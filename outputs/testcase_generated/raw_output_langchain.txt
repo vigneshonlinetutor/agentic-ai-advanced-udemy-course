@@ -1,0 +1,56 @@
+[
+  {
+    "id": "TC-001",
+    "title": "Valid User Registration",
+    "steps": [
+      "Prepare a valid request body with all required fields",
+      "Send a POST request to /api/v1/users/register",
+      "Check the response status"
+    ],
+    "expected": "Response status should be 201 Created and contain userId and authToken",
+    "priority": "High"
+  },
+  {
+    "id": "TC-002",
+    "title": "Duplicate Email Registration",
+    "steps": [
+      "Prepare a request body with an email that already exists in the system",
+      "Send a POST request to /api/v1/users/register",
+      "Check the response status"
+    ],
+    "expected": "Response status should be 409 Conflict with error message 'Email already registered'",
+    "priority": "High"
+  },
+  {
+    "id": "TC-003",
+    "title": "Invalid Password Registration",
+    "steps": [
+      "Prepare a request body with a password that does not meet the criteria (e.g., less than 8 characters)",
+      "Send a POST request to /api/v1/users/register",
+      "Check the response status"
+    ],
+    "expected": "Response status should be 400 Bad Request with specific error details",
+    "priority": "High"
+  },
+  {
+    "id": "TC-004",
+    "title": "Invalid Mobile Number Registration",
+    "steps": [
+      "Prepare a request body with an invalid mobile number format",
+      "Send a POST request to /api/v1/users/register",
+      "Check the response status"
+    ],
+    "expected": "Response status should be 400 Bad Request with error details about mobile number format",
+    "priority": "Medium"
+  },
+  {
+    "id": "TC-005",
+    "title": "Rate Limiting Exceeded",
+    "steps": [
+      "Send 6 registration requests from the same IP within an hour",
+      "Check the response status of the 6th request"
+    ],
+    "expected": "Response status should be 429 Too Many Requests",
+    "priority": "Medium"
+  }
+]

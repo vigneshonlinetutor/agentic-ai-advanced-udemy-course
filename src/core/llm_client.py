@@ -5,8 +5,10 @@ from typing import List, Dict
 import httpx
 from dotenv import load_dotenv
 import time
-
 from .cost_tracker import calculate_cost
+from langchain_openai import ChatOpenAI
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_community.llms import Ollama
 
 load_dotenv() # Load environment variables from .env file
 
@@ -142,3 +144,17 @@ def _call_ollama(messages: List[Message]) -> str:
     if "message" not in data or "content" not in data["message"]:
         raise RuntimeError("Ollama returned empty response. Check if Ollama is running ?")
     return data["message"]["content"]
+
+def get_langchain_llm():
+    """
+        Returns Langchain LLM wrapper based on .env PROVIDER.
+        Used by agents_v2/ (Langchain-based agents).
+        """
+    if PROVIDER == "openai":
+        return ChatOpenAI(model=MODEL, temperature=0, api_key=OPENAI_API_KEY)
+    elif PROVIDER == "google":
+        return ChatGoogleGenerativeAI(model=MODEL, temperature=0, google_api_key=GOOGLE_API_KEY)
+    elif PROVIDER == "ollama":
+        return Ollama(model=MODEL, temperature=0, base_url=OLLAMA_HOST)
+    else:
+        raise ValueError(f"Unsupported provider: {PROVIDER}")

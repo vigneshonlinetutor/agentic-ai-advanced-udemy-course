@@ -1,0 +1,46 @@
+{
+  "summary": "Multiple critical errors occurred, primarily internal server errors and service unavailability.",
+  "error_count": 5,
+  "critical_errors": [
+    {
+      "timestamp": "2026-01-04 14:18:00",
+      "message": "Internal server error",
+      "severity": "high"
+    },
+    {
+      "timestamp": "2026-01-04 14:18:10",
+      "message": "Internal server error",
+      "severity": "high"
+    },
+    {
+      "timestamp": "2026-01-04 14:18:20",
+      "message": "Internal server error",
+      "severity": "high"
+    },
+    {
+      "timestamp": "2026-01-04 14:19:05",
+      "message": "Service temporarily unavailable",
+      "severity": "high"
+    },
+    {
+      "timestamp": "2026-01-04 14:19:06",
+      "message": "Service temporarily unavailable",
+      "severity": "high"
+    }
+  ],
+  "root_causes": [
+    "malfunction in payment processing system",
+    "server overload or misconfiguration"
+  ],
+  "affected_systems": [
+    "payment processing",
+    "API service"
+  ],
+  "recommendations": [
+    "investigate payment processing system",
+    "review server configurations",
+    "implement better error handling",
+    "consider scaling infrastructure"
+  ],
+  "severity": "high"
+}
