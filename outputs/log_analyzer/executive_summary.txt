@@ -1,1 +1,7 @@
-We experienced several critical issues with our application, particularly affecting payment processing and access to key services like the dashboard and reports. This has resulted in users being unable to complete transactions and access important information. We are currently investigating the root causes and implementing fixes to restore full functionality. We expect to resolve these issues shortly and will keep you updated on our progress.
+We experienced several critical issues with our application,
+particularly affecting payment processing and access to reports and dashboards.
+This has resulted in users being unable to complete transactions and access important
+information, which could lead to lost revenue and customer dissatisfaction.
+We are currently investigating the root causes and
+working on fixes to restore full functionality.
+We expect to resolve these issues shortly and will keep you updated on our progress.

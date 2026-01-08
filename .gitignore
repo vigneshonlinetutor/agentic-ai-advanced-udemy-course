@@ -29,3 +29,6 @@ env/
 
 # Observability Logs
 observability_logs/
+
+# Vector DB
+data/vector_store/

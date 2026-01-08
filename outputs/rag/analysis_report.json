@@ -29,19 +29,19 @@
     }
   ],
   "root_causes": [
-    "Database connectivity issues",
-    "Bugs in payment processing logic",
-    "Resource exhaustion"
+    "Payment processing system issues",
+    "Server overload or misconfiguration"
   ],
   "affected_systems": [
     "payment processing",
     "dashboard",
-    "reporting"
+    "reports"
   ],
   "recommendations": [
-    "Investigate payment processing errors",
-    "Monitor server performance",
-    "Implement better error handling"
+    "Investigate payment processing code",
+    "Monitor server load",
+    "Implement better error handling",
+    "Optimize database queries"
   ],
   "severity": "high"
 }

@@ -19,3 +19,8 @@ langchain-community==0.4.1
 
 # LangGraph
 langgraph==1.0.5
+
+# RAG & Vector Databases
+chromadb==1.4.0
+langchain-chroma==1.1.0
+sentence-transformers==5.2.0
