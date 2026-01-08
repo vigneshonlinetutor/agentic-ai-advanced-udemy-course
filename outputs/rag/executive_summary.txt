@@ -1,5 +1,0 @@
-We are experiencing significant issues with our payment processing system,
-leading to repeated errors and service unavailability for users.
-This has resulted in users being unable to complete transactions and access
-important features like the dashboard and reports.
-Our team is actively investigating the root causes and implementing fixes to resolve these issues. We expect to have the system stabilized and fully operational shortly.

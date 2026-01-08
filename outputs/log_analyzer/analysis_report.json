@@ -1,5 +1,5 @@
 {
-  "summary": "Multiple critical errors affecting payment processing and service availability.",
+  "summary": "Multiple high-severity errors related to payment processing and authentication issues.",
   "error_count": 5,
   "critical_errors": [
     {
@@ -29,19 +29,19 @@
     }
   ],
   "root_causes": [
-    "Database connectivity issues",
-    "Bugs in payment processing logic",
-    "Resource exhaustion"
+    "Issues in payment processing logic",
+    "High server load or misconfiguration"
   ],
   "affected_systems": [
     "payment processing",
-    "dashboard",
-    "reporting"
+    "authentication system",
+    "dashboard service"
   ],
   "recommendations": [
-    "Investigate payment processing errors",
-    "Monitor server performance",
-    "Implement better error handling"
+    "Investigate payment processing",
+    "Monitor server load",
+    "Implement token refresh",
+    "Enhance error handling"
   ],
   "severity": "high"
 }

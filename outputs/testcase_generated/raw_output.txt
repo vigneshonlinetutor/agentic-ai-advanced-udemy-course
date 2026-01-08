@@ -1,0 +1,57 @@
+[
+  {
+    "id": "TC-REG-001",
+    "title": "Valid User Registration",
+    "steps": [
+      "Send POST request to /api/v1/users/register with valid email, password, mobile, firstName, and lastName",
+      "Check response status",
+      "Check response body for userId and authToken",
+      "Verify confirmation email is sent"
+    ],
+    "expected": "Response status should be 201 Created and contain userId and authToken. Confirmation email should be sent.",
+    "priority": "High"
+  },
+  {
+    "id": "TC-REG-002",
+    "title": "Duplicate Email Registration",
+    "steps": [
+      "Send POST request to /api/v1/users/register with an email that already exists in the system",
+      "Check response status",
+      "Check response body for error message"
+    ],
+    "expected": "Response status should be 409 Conflict and error message should be 'Email already registered'.",
+    "priority": "High"
+  },
+  {
+    "id": "TC-REG-003",
+    "title": "Password Validation Failure",
+    "steps": [
+      "Send POST request to /api/v1/users/register with a password that does not meet the criteria",
+      "Check response status",
+      "Check response body for validation error details"
+    ],
+    "expected": "Response status should be 400 Bad Request with specific error details about password validation.",
+    "priority": "Medium"
+  },
+  {
+    "id": "TC-REG-004",
+    "title": "Invalid Mobile Number Format",
+    "steps": [
+      "Send POST request to /api/v1/users/register with an invalid mobile number format",
+      "Check response status",
+      "Check response body for validation error details"
+    ],
+    "expected": "Response status should be 400 Bad Request with error details about mobile number format.",
+    "priority": "Medium"
+  },
+  {
+    "id": "TC-REG-005",
+    "title": "Rate Limiting Exceeded",
+    "steps": [
+      "Send more than 5 registration requests from the same IP within an hour",
+      "Check response status for the 6th request"
+    ],
+    "expected": "Response status should be 429 Too Many Requests.",
+    "priority": "Low"
+  }
+]
