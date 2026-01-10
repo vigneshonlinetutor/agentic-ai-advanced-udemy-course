@@ -1,0 +1,15 @@
+2026-01-08 14:15:23 [ERROR] Database connection timeout after 30s
+2026-01-08 14:15:24 [ERROR] Failed to execute query: SELECT * FROM users WHERE id = ?
+2026-01-08 14:15:25 [WARN] Retrying connection (attempt 1/3)
+2026-01-08 14:15:28 [ERROR] Database connection timeout after 30s
+2026-01-08 14:15:29 [ERROR] Connection pool exhausted: 50/50 connections active
+2026-01-08 14:15:30 [CRITICAL] Service degraded: payment-service
+2026-01-08 14:15:35 [ERROR] Transaction rollback: payment_id=12345
+2026-01-08 14:15:40 [ERROR] Database connection timeout after 30s
+2026-01-08 14:15:45 [WARN] Connection pool saturation detected
+2026-01-08 14:15:50 [ERROR] Query timeout: exceeded 10s limit
+2026-01-08 14:16:00 [CRITICAL] Multiple service failures detected
+2026-01-08 14:16:05 [ERROR] Failed to process 15 transactions
+2026-01-08 14:16:10 [WARN] High database CPU usage: 95%
+2026-01-08 14:16:15 [ERROR] Deadlock detected on table: inventory
+2026-01-08 14:16:20 [CRITICAL] Service degraded: inventory-service
